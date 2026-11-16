@@ -56,7 +56,7 @@ export default function MapModal({ open, onClose }) {
 
         <div className="map-modal-map">
           <iframe
-            title="Map of Ashish Restaurant & Banquet, Karelibagh, Vadodara"
+            title={`Map of ${EVENT.venueName}, Vadodara`}
             src={MAPS_EMBED_URL}
             allowFullScreen
             referrerPolicy="no-referrer-when-downgrade"

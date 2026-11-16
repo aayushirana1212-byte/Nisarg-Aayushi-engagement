@@ -14,29 +14,21 @@ export const EVENT = {
   time: '10 AM',
   city: 'Vadodara',
   region: 'Gujarat, India',
-  venueName: 'Ashish Restaurant & Banquet',
-  venueAddress: 'Pushpakunj Society, Karelibagh',
-  venueCity: 'Vadodara, Gujarat 390006',
+  venueName: 'The Grand Jalaram Restaurant and Banquet',
+  venueAddress: 'Between Tarsali and Kapurai Bridge, National Highway No. 8, Opposite Zillion Sparsh Building',
+  venueCity: 'Vadodara',
 };
 
-// Exact venue location (Ashish Restaurant & Banquet, Harni Road, Karelibagh).
-export const VENUE_COORDS = { lat: 22.3157124, lng: 73.2012021 };
 export const VENUE_FULL_ADDRESS =
-  'Ashish Restaurant & Banquet, Pushpakunj Society, Karelibagh, Vadodara, Gujarat 390006';
-
-const { lat, lng } = VENUE_COORDS;
+  'The Grand Jalaram Restaurant and Banquet, Between Tarsali and Kapurai Bridge, National Highway No. 8, Opposite Zillion Sparsh Building, Vadodara';
 
 // Opens Google Maps (app or website) at the venue, with the address shown.
 export const MAPS_URL =
-  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(VENUE_FULL_ADDRESS)}` +
-  `&center=${lat},${lng}`;
+  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(VENUE_FULL_ADDRESS)}`;
 
-// Live map shown inside the website. OpenStreetMap allows being embedded
-// anywhere (Google Maps refuses to load inside some frames / previews).
-const d = 0.0045;
+// Embed a search for the venue address so the map follows the updated venue.
 export const MAPS_EMBED_URL =
-  `https://www.openstreetmap.org/export/embed.html?bbox=${lng - d},${lat - d},${lng + d},${lat + d}` +
-  `&layer=mapnik&marker=${lat},${lng}`;
+  `https://www.google.com/maps?q=${encodeURIComponent(VENUE_FULL_ADDRESS)}&output=embed`;
 
 // 12 December 2026, 10:00 AM (local time of the visitor). Month is zero based.
 export const EVENT_TARGET = new Date(2026, 11, 12, 10, 0, 0).getTime();
