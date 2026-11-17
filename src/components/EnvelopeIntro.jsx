@@ -9,7 +9,7 @@ import { Corners, Divider } from './Ornaments.jsx';
   revealed -> full invitation card is shown with the ENTER CELEBRATION button
   leaving  -> intro fades away, main website is already mounted underneath
 */
-export default function EnvelopeIntro({ onOpen, onEnter, onDone }) {
+export default function EnvelopeIntro({ onEnter, onDone }) {
   const [stage, setStage] = useState('closed');
   const [sceneGone, setSceneGone] = useState(false);
   const timers = useRef([]);
@@ -29,7 +29,6 @@ export default function EnvelopeIntro({ onOpen, onEnter, onDone }) {
 
   const openEnvelope = () => {
     if (stage !== 'closed') return;
-    if (onOpen) onOpen(); // first user interaction: allows music to start
     setStage('opening');
     later(() => setStage('revealed'), 2400);
     later(() => setSceneGone(true), 3300);

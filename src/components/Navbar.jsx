@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { MusicToggle } from './MusicControls.jsx';
 
 const LINKS = [
   { id: 'home', label: 'Home' },
@@ -8,7 +7,7 @@ const LINKS = [
   { id: 'story', label: 'Our Story' },
 ];
 
-export default function Navbar({ playing, onToggleMusic }) {
+export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState('home');
@@ -65,7 +64,6 @@ export default function Navbar({ playing, onToggleMusic }) {
         </nav>
 
         <div className="nav-actions">
-          <MusicToggle playing={playing} onToggle={onToggleMusic} />
           <button
             type="button"
             className={`nav-burger ${open ? 'is-open' : ''}`}

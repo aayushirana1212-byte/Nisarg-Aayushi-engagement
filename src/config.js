@@ -1,7 +1,5 @@
 // Central place for the invitation details and settings.
 
-// Add a music.mp3 file to public/ to enable background music.
-const musicUrl = '/music.mp3';
 
 export const BRIDE = { name: 'Aayushi', parents: 'PareshBhai & PritiBen' };
 export const GROOM = { name: 'Nisarg', parents: 'AnilBhai & VaishaliBen' };
@@ -33,4 +31,3 @@ export const MAPS_EMBED_URL =
 // 12 December 2026, 10:00 AM (local time of the visitor). Month is zero based.
 export const EVENT_TARGET = new Date(2026, 11, 12, 10, 0, 0).getTime();
 
-export const MUSIC_SRC = musicUrl;
